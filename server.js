@@ -59,6 +59,10 @@ app.use("/api/discount", discountRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
+app.get("/", (req, res) => {
+  return res.status(200).json({ message: "Everything's working!" });
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`\nServer running on port ${PORT} [${process.env.NODE_ENV}]`);
